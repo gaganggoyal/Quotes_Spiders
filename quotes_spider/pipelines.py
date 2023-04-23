@@ -10,4 +10,6 @@ from itemadapter import ItemAdapter
 
 class QuotesSpiderPipeline:
     def process_item(self, item, spider):
+        if item['H1_tag']:
+            item['H1_tag'] = item['H1_tag'][0].upper()
         return item
